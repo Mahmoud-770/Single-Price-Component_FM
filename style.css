@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    text-align: left;
+    Font-size: 16px;
+    margin: 0;padding: 0;
+    font-family: 'Karla', sans-serif;
+}
+
+body{
+    background: hsl(204, 43%, 93%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* * * * M A I N - C A R D S * * * */
+.cards{
+    width: 700px;
+    height: 500px;
+    overflow: hidden;
+    display: grid;
+    border-radius: 5px;
+    box-shadow: 0px 3px 14px 0px #abb9cd;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "one one"
+        "two thr";
+}
+.one, .two, .thr{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* * * * S E C T I O N - O N E * * * */
+.one{
+    grid-area: one;
+    background: #fff;
+}
+.one h1{
+    font-size: 25px;
+    font-weight: 700;
+    color: hsl(179, 62%, 43%);
+}
+.one h3{
+    font-size: 18px;
+    padding-top: 20px;
+    color: hsl(71, 73%, 54%);
+}
+.one p{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    color: hsl(218, 22%, 67%);
+}
+
+
+/* * * * S E C T I O N - T W O * * * */
+.two{
+    grid-area: two;
+    color: #fff;
+    background: hsl(179, 62%, 43%);
+}
+.two h2{
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.two p{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+.two .per{color:#d1e0f5}
+
+.two p span{
+    color: #fff;
+    font-weight: 700;
+    font-size: 35px;
+    margin-right: 15px;
+}
+.two button{
+    color: #fff;
+    margin-top: 15px;
+    padding: 15px;
+    font-weight: 700;
+    text-align: center;
+
+    border: none;
+    border-radius: 5px;
+    background: hsl(71, 73%, 54%);
+    box-shadow: 1px 5px 20px 0px #959595;
+}
+
+
+/* * * * S E C T I O N - T H R E E * * * */
+.thr{
+    grid-area: thr;
+    color: #fff;
+    background: hsl(179deg 62% 43% / 80%);
+}
+.thr h2{
+    font-size: 18px;
+    font-weight: 700;
+}
+.thr p{
+    font-size: 15px;
+    letter-spacing: .5px;
+    color: #d1e0f5;
+}
+
+
+/* * * * * Media Query For Mobile-Screen * * * * */
+@media (max-width: 375px){
+    body{height: 820px;}
+    .cards{
+        width: 90%;height: auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "one"
+        "two"
+        "thr";
+    }
+    .one, .two, .thr{padding: 20px;}
+    .thr p{font-size: 18px;}
+}
